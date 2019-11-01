@@ -81,6 +81,7 @@ var Configuration = map[string]PathConfig{
 	"diff":    Allowed,
 	"dlv":     Allowed,
 	"expr":    Allowed,
+	"flock":   Allowed,
 	"fuser":   Allowed,
 	"getopt":  Allowed,
 	"git":     Allowed,
