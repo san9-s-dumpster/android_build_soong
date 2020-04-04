@@ -86,6 +86,7 @@ var Configuration = map[string]PathConfig{
 	"expr":     Allowed,
 	"find":     Allowed,
 	"flex":     Log,
+ 	"pkg-config": Allowed,
 	"flock":    Allowed,
 	"fuser":    Allowed,
 	"getopt":   Allowed,
@@ -105,6 +106,7 @@ var Configuration = map[string]PathConfig{
 	"pstree":   Allowed,
 	"python3":  Allowed,
         "python3.6": Allowed,
+ 	"python3.7":  Allowed,
         "python3.8": Allowed,
 	"realpath": Allowed,
 	"repo":     Allowed,
@@ -133,7 +135,7 @@ var Configuration = map[string]PathConfig{
 	"ld":         Forbidden,
 	"ld.bfd":     Forbidden,
 	"ld.gold":    Forbidden,
-	"pkg-config": Forbidden,
+
 
 	// On Linux we'll use the toybox versions of these instead.
 	"basename":  LinuxOnlyPrebuilt,
