@@ -20,7 +20,7 @@ import (
 	"runtime"
 	"strings"
 
-	"shapeshift/soong/android"
+	"ssos/soong/android"
 
 	"github.com/google/blueprint/proptools"
 )
@@ -134,8 +134,8 @@ type variableProperties struct {
 			Exclude_srcs []string `android:"arch_variant"`
 		} `android:"arch_variant"`
 
-		// include shapeshift variables
-		Shapeshift android.Product_variables
+		// include Ssos variables
+		Ssos android.Product_variables
 	} `android:"arch_variant"`
 }
 
@@ -342,8 +342,8 @@ type productVariables struct {
 
 	BoardUsesRecoveryAsBoot *bool `json:",omitempty"`
 
-	// include shapeshift variables
-	Shapeshift android.ProductVariables
+	// include Ssos variables
+	Ssos android.ProductVariables
 }
 
 func boolPtr(v bool) *bool {
@@ -601,8 +601,8 @@ func createVariableProperties(moduleTypeProps []interface{}, productVariables in
 func createVariablePropertiesType(moduleTypeProps []interface{}, productVariables interface{}) reflect.Type {
 	typ, _ := proptools.FilterPropertyStruct(reflect.TypeOf(productVariables),
 		func(field reflect.StructField, prefix string) (bool, reflect.StructField) {
-			if strings.HasPrefix(prefix, "Product_variables.Shapeshift") {
-				// Convert Product_variables.Shapeshift.Foo to Shapeshift.Foo
+			if strings.HasPrefix(prefix, "Product_variables.Ssos") {
+				// Convert Product_variables.Ssos.Foo to Ssos.Foo
 				_, prefix = splitPrefix(prefix)
 			}
 
